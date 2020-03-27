@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressIndicator?>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" prefHeight="274.0" prefWidth="421.0" stylesheets="application.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8.0.221"
+         fx:controller="at.tugraz.oo2.client.ui.controller.LiveChartUI">
+
+    <GridPane fx:id="gridPane" HBox.hgrow="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    </GridPane>
+
+    <HBox fx:id="progressHbox"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+
+        <ProgressIndicator fx:id="progressBar"
+                           visible="false"
+                           maxHeight="250"
+                           maxWidth="250"/>
+
+    </HBox>
+
+</fx:root>

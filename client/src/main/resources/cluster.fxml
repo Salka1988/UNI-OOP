@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root prefHeight="680.0" prefWidth="650.0" stylesheets="application.css" type="javafx.scene.layout.AnchorPane"
+		 xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+
+	<HBox fx:id="mainHbox" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+		<GridPane fx:id="leftGridPane" styleClass="leftPanelPane" HBox.hgrow="ALWAYS">
+			<Label text="Choose sensor:" GridPane.rowIndex="0"/>
+			<ListView fx:id="lvSensors" GridPane.rowIndex="1"/>
+			<Label text="Metric:" GridPane.rowIndex="2" />
+			<ComboBox fx:id="cbMetric" GridPane.rowIndex="3" />
+			<Label text="From:" GridPane.rowIndex="4"/>
+			<DatePicker fx:id="dpFrom" GridPane.rowIndex="5"/>
+			<Label prefWidth="250.0" text="To:" GridPane.rowIndex="6"/>
+			<DatePicker fx:id="dpTo" GridPane.rowIndex="7"/>
+			<Label text="Interval Clusters (in minutes):" GridPane.rowIndex="8"/>
+			<TextField fx:id="tfIntervalClusters" GridPane.rowIndex="9"/>
+			<Label text="Points per Cluster:" GridPane.rowIndex="10"/>
+			<TextField fx:id="tfPointsCluster" GridPane.rowIndex="11"/>
+			<Label text="Number of clusters:" GridPane.rowIndex="12"/>
+			<TextField fx:id="tfClusters" GridPane.rowIndex="13"/>
+			<Label text="" GridPane.rowIndex="14" />
+			<Button fx:id="btnStart" text="Cluster" GridPane.rowIndex="15" />
+		</GridPane>
+		<Separator orientation="VERTICAL" prefHeight="200.0">
+			<HBox.margin>
+				<Insets left="-1.0" right="-5.0"/>
+			</HBox.margin>
+		</Separator>
+		<VBox prefHeight="600.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+			<Label fx:id="clusterDetailsInfo" visible="false" text="Double click on table entry to see cluster details.">
+				<padding>
+					<Insets topRightBottomLeft="6"/>
+				</padding>
+			</Label>
+			<ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" pannable="true" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+				<TableView fx:id="tvClusters" prefHeight="600.0" prefWidth="400.0" VBox.vgrow="ALWAYS"/>
+			</ScrollPane>
+		</VBox>
+		<Separator orientation="VERTICAL" prefHeight="200.0">
+			<HBox.margin>
+				<Insets left="-1.0" right="-5.0"/>
+			</HBox.margin>
+		</Separator>
+		<GridPane fx:id="gpChart" HBox.hgrow="ALWAYS"
+				  AnchorPane.bottomAnchor="0.0"
+				  AnchorPane.leftAnchor="0.0"
+				  AnchorPane.rightAnchor="0.0"
+				  AnchorPane.topAnchor="0.0">
+
+			<ProgressIndicator	fx:id="progressIndicator"
+								  visible="false"
+								  maxHeight="50"
+								  maxWidth="50"
+								  GridPane.valignment="CENTER"
+								  GridPane.halignment="CENTER"/>
+
+			<ScrollPane fx:id="spChart"
+				  AnchorPane.bottomAnchor="0.0"
+				  AnchorPane.leftAnchor="0.0"
+				  AnchorPane.rightAnchor="0.0"
+				  AnchorPane.topAnchor="0.0"/>
+
+		</GridPane>
+	</HBox>
+</fx:root>

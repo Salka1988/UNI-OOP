@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root prefHeight="680.0" prefWidth="650.0" stylesheets="application.css" type="javafx.scene.layout.AnchorPane"
+         xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+        <GridPane fx:id="gridPane" alignment="CENTER" styleClass="clusterDetailHeader" prefHeight="50">
+            <Label text="Cluster error: " GridPane.columnIndex="0"/>
+            <Label fx:id="labelClusterError" GridPane.columnIndex="1">
+                <padding>
+                    <Insets right="15"/>
+                </padding>
+            </Label>
+            <Label text="Members: " GridPane.columnIndex="2"/>
+            <Label fx:id="labelMembers" GridPane.columnIndex="3"/>
+        </GridPane>
+        <Separator prefWidth="20">
+            <HBox.margin>
+                <Insets left="-1.0" right="-5.0"/>
+            </HBox.margin>
+        </Separator>
+        <ProgressIndicator fx:id="progressIndicator"
+                           visible="false"
+                           maxHeight="50"
+                           maxWidth="50"
+                           GridPane.valignment="CENTER"
+                           GridPane.halignment="CENTER"/>
+
+        <ScrollPane fx:id="scrollPane" VBox.vgrow="ALWAYS"/>
+
+    </VBox>
+</fx:root>

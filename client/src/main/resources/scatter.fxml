@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/8.0.221" stylesheets="application.css" fx:controller="at.tugraz.oo2.client.ui.controller.ScatterUI">
+	<GridPane fx:id="leftGridPane" styleClass="leftPanelPane">
+		<columnConstraints>
+			<ColumnConstraints hgrow="SOMETIMES"/>
+		</columnConstraints>
+		<rowConstraints>
+		</rowConstraints>
+		<children>
+			<Label text="Sensor X:" GridPane.rowIndex="0"/>
+			<ComboBox fx:id="cbSensorX" GridPane.rowIndex="1"/>
+			<Label text="Sensor Y:" GridPane.rowIndex="4"/>
+			<ComboBox fx:id="cbSensorY" GridPane.rowIndex="5"/>
+			<Label text="Metric:" GridPane.rowIndex="6"/>
+			<ComboBox fx:id="metricComboBox" GridPane.rowIndex="7"/>
+			<Label text="From:" GridPane.rowIndex="8" />
+			<DatePicker fx:id="dpFrom" GridPane.rowIndex="9" />
+			<Label prefWidth="250.0" text="To:" GridPane.rowIndex="10" />
+			<DatePicker fx:id="dpTo" GridPane.rowIndex="11" />
+			<Label text="Interval (in minutes):" GridPane.rowIndex="12" />
+			<TextField fx:id="tfInterval" GridPane.rowIndex="13" />
+            <Label text="" GridPane.rowIndex="14" />
+			<Button fx:id="draw" onAction="#onDrawClick" text="Draw" GridPane.rowIndex="15" />
+			<Label text="" GridPane.rowIndex="16"/>
+			<Button onAction="#onHistoryClicked" text="Show search history" GridPane.rowIndex="17" />
+		</children>
+	</GridPane>
+	<Separator orientation="VERTICAL" prefHeight="200.0">
+		<HBox.margin>
+			<Insets left="-1.0" right="-5.0"/>
+		</HBox.margin>
+	</Separator>
+	<GridPane fx:id="rightPanelPane"
+			  HBox.hgrow="ALWAYS"
+			  AnchorPane.bottomAnchor="0.0"
+			  AnchorPane.leftAnchor="0.0"
+			  AnchorPane.rightAnchor="0.0"
+			  AnchorPane.topAnchor="0.0">
+
+		<HBox fx:id="rightGridHbox"
+			  AnchorPane.bottomAnchor="0.0"
+			  AnchorPane.leftAnchor="0.0"
+			  AnchorPane.rightAnchor="0.0"
+			  AnchorPane.topAnchor="0.0">
+
+			<ProgressIndicator	fx:id="progressIndicator"
+								  visible="false"
+								  maxHeight="250"
+								  maxWidth="250"/>
+
+		</HBox>
+	</GridPane>
+</fx:root>
